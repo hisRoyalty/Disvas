@@ -4,10 +4,10 @@ const Canvas = require('canvas');
 async function fakeMessage(message, user, text) {
     let member = message.guild.members.cache.get(user.id);
     if(!message) {
-        throw Error ("[Disvas] Message does not exist!")
+        throw Error ("[Disvas]: Message does not exist!")
     }
     if(!member) {
-        throw Error ("[Disvas] User is not defined!")
+        throw Error ("[Disvas]: User is not defined!")
     }
     let displayName = member.displayName;
     let roleColor = member.displayHexColor;
@@ -15,7 +15,7 @@ async function fakeMessage(message, user, text) {
     let getStretch = textAllign(text, textArray);
     text = textArray.map(t => `${t}`).join("\n");
     if(!text) {
-        throw Error ("[Disvas] Text is not provided!")
+        throw Error ("[Disvas]: Text is not provided!")
     }
     if(roleColor === '#000000') {
         roleColor = '#fdfdfc'
