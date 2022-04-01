@@ -1,1 +1,7 @@
-//nothing much now??
+const Disvas = require('../src/disvas')
+
+
+
+module.exports = {
+    Disvas
+}
