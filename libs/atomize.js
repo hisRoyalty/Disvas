@@ -53,7 +53,9 @@ module.exports = async(image) => {
       }
       mappedImage.push(row);
     }
-  
+    
+    
+    // formula for calculating the brightness of a pixel
     function calculateRelativeBrightness(red, green, blue) {
       return (
         Math.sqrt(
@@ -61,6 +63,12 @@ module.exports = async(image) => {
         ) / 100
       );
     }
+
+    // function to calculate the brightness of a pixel
+    /*
+    https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color
+    check this link if you have problems :)
+    */
     var Particle = (function () {
       function Particle() {
         this.x = Math.random() * 256;

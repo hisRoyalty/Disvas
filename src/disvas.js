@@ -1,5 +1,5 @@
 const FakeMessage = require('../libs/fakeMessage');
-const BallEffect = require('../libs/ballEffect')
+const Atomize = require('../libs/atomize')
 const TextOnAvatar = require('../libs/textOnAvatar')
 const Rain = require('../libs/rain')
 const Freeze = require('../libs/freeze')
@@ -27,11 +27,11 @@ class Disvas{
     
     }
 
-    static async ballEffect(image) {
+    static async atomize(image) {
         if(!image) {
             throw Error('[Disvas]: Image parameter is missing!')
         }
-        return await BallEffect(image)
+        return await Atomize(image)
     
     }
 

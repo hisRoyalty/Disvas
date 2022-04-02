@@ -7,7 +7,7 @@ E = Exceptions
 *Since it is beta and there is no docs, this is the only way we can explain the methods!*
 
 #### [I]
-- BallEffect
+- atomize
 - rain
 - freeze
 
