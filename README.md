@@ -26,7 +26,7 @@ client.on("message", async (message) => {
     if (message.author.bot) return;
     if (message.content === "!atomize") {
         let avatar = message.author.displayAvatarURL({ format: 'png' });
-        let buffer = await disvas.atomize(avatar);
+        let buffer = await disvas.Disvas.atomize(avatar);
         let attachment = new MessageAttachment(buffer, "Amotize.gif");
         return message.channel.send(attachment);
     }
@@ -49,7 +49,7 @@ client.on("message", async (message) => {
     if (message.content === "!textOnAvatar") {
         let avatar = message.author.displayAvatarURL({ format: 'png' });
         let args = message.content.split(" ").slice(1);
-        let buffer = await disvas.textOnAvatar(avatar, args);
+        let buffer = await disvas.Disvas.textOnAvatar(avatar, args);
         let attachment = new MessageAttachment(buffer, "TextOnAvatar.gif");
         return message.channel.send(attachment);
     }
@@ -71,7 +71,7 @@ client.on("message", async (message) => {
     if (message.author.bot) return;
     if (message.content === "!rain") {
         let avatar = message.author.displayAvatarURL({ format: 'png' });
-        let buffer = await disvas.rain(avatar);
+        let buffer = await disvas.Disvas.rain(avatar);
         let attachment = new MessageAttachment(buffer, "Rain.gif");
         return message.channel.send(attachment);
     }
@@ -93,7 +93,7 @@ client.on("message", async (message) => {
     if (message.author.bot) return;
     if (message.content === "!freeze") {
         let avatar = message.author.displayAvatarURL({ format: 'png' });
-        let buffer = await disvas.freeze(avatar);
+        let buffer = await disvas.Disvas.freeze(avatar);
         let attachment = new MessageAttachment(buffer, "Freeze.gif");
         return message.channel.send(attachment);
     }
@@ -118,7 +118,7 @@ client.on("message", async (message) => {
         let avatar = message.author.displayAvatarURL({ format: 'png' });
         let hex = "#ffffff";
         let content = message.content;
-        let buffer = await disvas.fakeMessage(name, avatar, hex, content);
+        let buffer = await disvas.Disvas.fakeMessage(name, avatar, hex, content);
         let attachment = new MessageAttachment(buffer, "FakeMessage.png");
         return message.channel.send(attachment);
     }
@@ -126,13 +126,12 @@ client.on("message", async (message) => {
 client.login(token)
 ```
 
-## Owner
+## Collaborators
 ### Im-Ace-1234
 <img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/78647871">
 <br>
 I'm a cool guy.
 
-## Contributers
 ### hisRoyalty
 
 <img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/88897968">
