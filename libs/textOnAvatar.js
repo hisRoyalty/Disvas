@@ -1,5 +1,6 @@
+const GIFEncoder = require('gifencoder');
 const Canvas = require('canvas');
-const GIFEncoder = require('gifencoder')
+
 
 module.exports = async(image, args) => {
     const encoder = new GIFEncoder(150, 150);
@@ -10,10 +11,9 @@ module.exports = async(image, args) => {
     
     const canvas = Canvas.createCanvas(150, 150);
     const context = canvas.getContext('2d');
-    let check = args;
-    if (check.length < '2') throw Error ('[Disvas]: Provided text should be more than one word!')
+    if (args.length < '2') throw Error ('[Disvas]: Provided text should be more than one word!')
     let avatar = await Canvas.loadImage(image);
-    await check.forEach(async (content) => {
+    await args.forEach(async (content) => {
             context.drawImage(avatar, 0, 0, 150, 150);
             context.textAlign = 'center';
             context.font = '30px Impact';
