@@ -12,7 +12,7 @@ E = Exceptions
 - freeze
 
 #### [IA]
-- textOnImage
+- textOnAvatar
 
 #### [E]
 - fakeMessage [displayName, displayAvatar, roleColor, text]

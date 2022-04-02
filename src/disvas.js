@@ -1,6 +1,6 @@
 const FakeMessage = require('../libs/fakeMessage');
 const BallEffect = require('../libs/ballEffect')
-const TextOnImage = require('../libs/textOnImage')
+const TextOnAvatar = require('../libs/textOnAvatar')
 const Rain = require('../libs/rain')
 const Freeze = require('../libs/freeze')
 class Disvas{
@@ -35,8 +35,8 @@ class Disvas{
     
     }
 
-    static async textOnImage(image, args) {
-        return await TextOnImage(image, args)
+    static async textOnAvatar(image, args) {
+        return await TextOnAvatar(image, args)
         
         
     }
