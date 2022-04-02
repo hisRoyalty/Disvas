@@ -1,6 +1,6 @@
 {
   "name": "disvas",
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.2",
   "description": "Simple package based on Discord image manipulation to suit your needs!",
   "main": "index.js",
   "scripts": {
