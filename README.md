@@ -1,33 +1,143 @@
-## Current Methods
+# Disvas
+Image manipulation tool to manipulate images!
 
+# Installation
+```sh
+$ npm i disvas
+```
 
-I = Image parameter only!
-IT = Image and text parameters!
-E = Exceptions
-*Since it is beta and there is no docs, this is the only way we can explain the methods!*
+[![NPM](https://nodei.co/npm/disvas.png)](https://nodei.co/npm/disvas/)
 
-#### [I]
-- atomize
-- rain
-- freeze
+# Documentation
+Coming soon!
 
-#### [IA]
-- textOnAvatar
+# Examples
+> ## Atomize
+```js
+const { Client, MessageAttachment } = require("discord.js");
+const client = new Client();
+const disvas = require("disvas");
 
-#### [E]
-- fakeMessage [displayName, displayAvatar, roleColor, text]
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
 
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content === "!atomize") {
+        let avatar = message.author.displayAvatarURL({ format: 'png' });
+        let buffer = await disvas.atomize(avatar);
+        let attachment = new MessageAttachment(buffer, "Amotize.gif");
+        return message.channel.send(attachment);
+    }
+});
+client.login(token)
+```
 
-Note: All of these are may be buggy, as this is the first beta stage!
+> ## Text on Avatar
+```js
+const { Client, MessageAttachment } = require("discord.js");
+const client = new Client();
+const disvas = require("disvas");
 
-## License
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
 
-Project is under Apache-2.0 License.
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content === "!textOnAvatar") {
+        let avatar = message.author.displayAvatarURL({ format: 'png' });
+        let args = message.content.split(" ").slice(1);
+        let buffer = await disvas.textOnAvatar(avatar, args);
+        let attachment = new MessageAttachment(buffer, "TextOnAvatar.gif");
+        return message.channel.send(attachment);
+    }
+});
+client.login(token)
+```
 
-## Contributing
+> ## Rain
+```js
+const { Client, MessageAttachment } = require("discord.js");
+const client = new Client();
+const disvas = require("disvas");
 
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
 
-- Unfortunately, this project does not have it's GitHub repository public! However, in future updates, it will be public!
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content === "!rain") {
+        let avatar = message.author.displayAvatarURL({ format: 'png' });
+        let buffer = await disvas.rain(avatar);
+        let attachment = new MessageAttachment(buffer, "Rain.gif");
+        return message.channel.send(attachment);
+    }
+});
+client.login(token)
+```
 
+> ## Freeze
+```js
+const { Client, MessageAttachment } = require("discord.js");
+const client = new Client();
+const disvas = require("disvas");
 
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
 
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content === "!freeze") {
+        let avatar = message.author.displayAvatarURL({ format: 'png' });
+        let buffer = await disvas.freeze(avatar);
+        let attachment = new MessageAttachment(buffer, "Freeze.gif");
+        return message.channel.send(attachment);
+    }
+});
+client.login(token)
+```
+
+> ## FakeMessage [BETA]
+```js
+const { Client, MessageAttachment } = require("discord.js");
+const client = new Client();
+const disvas = require("disvas");
+
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
+
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content === "!fakeMessage") {
+        let name = message.author.username;
+        let avatar = message.author.displayAvatarURL({ format: 'png' });
+        let hex = "#ffffff";
+        let content = message.content;
+        let buffer = await disvas.fakeMessage(name, avatar, hex, content);
+        let attachment = new MessageAttachment(buffer, "FakeMessage.png");
+        return message.channel.send(attachment);
+    }
+});
+client.login(token)
+```
+
+## Owner
+
+<img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/78647871">
+<br>
+I'm a cool guy.
+
+## Contributers
+### hisRoyalty
+
+<img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/88897968">
+<br>
+I love baguettes
+
+# Note
+> this package might have some bugs, cause it's under dev state.
