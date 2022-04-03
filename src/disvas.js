@@ -2,8 +2,8 @@ const FakeMessage = require('../libs/fakeMessage');
 const Atomize = require('../libs/atomize')
 const TextOnAvatar = require('../libs/textOnAvatar')
 const Rain = require('../libs/rain')
-const Freeze = require('../libs/freeze')
-class Disvas{
+const Freeze = require('../libs/freeze');
+class Disvas {
     constructor() {
         throw Error(`[Disvas]: ${this.constructor.name} class by-no-means can be instantiated! ⚠️`)
     }
@@ -68,6 +68,5 @@ class Disvas{
 
 
 }
-//
 
 module.exports = Disvas;
