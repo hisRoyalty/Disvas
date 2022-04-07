@@ -60,13 +60,6 @@ class Disvas {
 
         return await Freeze(image)
     }
-
-
-
-
-
-
-
 }
 
 module.exports = Disvas;
