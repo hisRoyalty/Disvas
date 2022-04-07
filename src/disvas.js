@@ -5,7 +5,7 @@ const Rain = require('../libs/rain')
 const Freeze = require('../libs/freeze');
 class Disvas {
     constructor() {
-        throw Error(`[Disvas]: ${this.constructor.name} class by-no-means can be instantiated! ⚠️`)
+        throw Error(`[Disvas]: Instantiating of Disvas class failed! Please use static methods of Disvas instead!`)
     }
     static async fakeMessage(options = { displayName, displayAvatar, roleColor, text }) {
         if(!options.displayName) {
@@ -60,13 +60,6 @@ class Disvas {
 
         return await Freeze(image)
     }
-
-
-
-
-
-
-
 }
 
 module.exports = Disvas;
