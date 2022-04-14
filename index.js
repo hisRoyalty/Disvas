@@ -1,4 +1,4 @@
-const Canvas = require('./src/disvas')
+const Canvas = require('./src/Disvas')
 
 module.exports = {
     Canvas
