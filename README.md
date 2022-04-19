@@ -141,4 +141,4 @@ I'm a cool guy.
 I love baguettes
 
 # Note
-> this package might have some bugs, because it's under dev state.
+> Work in progress!
