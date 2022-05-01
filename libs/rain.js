@@ -12,7 +12,7 @@ module.exports = async(image) => {
     const canvas = Canvas.createCanvas(256, 310);
     const ctx = canvas.getContext("2d");
     
-    function greyscale(ctx) {
+    function grayscale(ctx) {
         const imgData = ctx.getImageData(0, 0, 256, 310);
         
         for (let i = 0; i < imgData.data.length; i += 4) {
@@ -32,7 +32,7 @@ module.exports = async(image) => {
         if (y > -50) { y = -200 }
         ctx.globalAlpha = 0.7
         ctx.drawImage(img, 0, 0, 256, 310)
-        greyscale(ctx)
+        grayscale(ctx)
         ctx.drawImage(rain, x, y, 356, 620)
         y = y + 50;
         encoder.addFrame(ctx);        
