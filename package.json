@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Im-Ace-1234/Disvas.git"
+    "url": "git+https://github.com/hisRoyalty/Disvas.git"
   },
   "keywords": [
     "image",
     "discord",
     "image-manipulation"
   ],
-  "author": "Im-Ace-1234",
+  "author": "royalnotfound",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Im-Ace-1234/Disvas/issues"
+    "url": "https://github.com/hisRoyalty/Disvas/issues"
   },
-  "homepage": "https://github.com/Im-Ace-1234/Disvas#readme",
+  "homepage": "https://github.com/hisRoyalty/Disvas#readme",
   "dependencies": {
     "canvas": "^2.9.1",
     "gifencoder": "^2.0.1"
