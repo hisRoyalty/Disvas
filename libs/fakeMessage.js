@@ -10,9 +10,9 @@ module.exports = async(displayName, displayAvatar, roleColor, text) => {
     };
    try {
     // Register Font
-    Canvas.registerFont("./fonts/whitneybook.otf", { family: "whitneybook" } );
-    Canvas.registerFont("./fonts/whitneylight.otf", { family: "whitneylight" } );
-    Canvas.registerFont("./fonts/whitneymedium.otf", { family: "whitneymedium" } );
+    Canvas.registerFont("./assets/fonts/whitneybook.otf", { family: "whitneybook" } );
+    Canvas.registerFont("./assets/fonts/whitneylight.otf", { family: "whitneylight" } );
+    Canvas.registerFont("./assets/fonts/whitneymedium.otf", { family: "whitneymedium" } );
     // Creating Background
     let stretch = 20 * getStretch;
     const width = 700;

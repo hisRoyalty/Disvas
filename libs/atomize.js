@@ -23,7 +23,7 @@ module.exports = async(image) => {
     var pixels = ctx.getImageData(0, 0, 256, 310);
     ctx.clearRect(0, 0, 256, 310);
     var particlesArray = [];
-    function generateRandom(min = 6000, max= 6200){
+    function generateRandom(min = 6000, max = 6200){
       let diff = max - min
       let rand = Math.random()
       rand = Math.floor(rand * diff)
@@ -64,10 +64,12 @@ module.exports = async(image) => {
       );
     }
 
-    // function to calculate the brightness of a pixel
+
     /*
+    * @INFO
+    * function to calculate the brightness of a pixel
     https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color
-    check this link if you have problems :)
+    check this link if you have problems.
     */
     var Particle = (function () {
       function Particle() {

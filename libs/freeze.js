@@ -3,7 +3,7 @@ const Canvas = require('canvas');
 
 module.exports = async(image) => {
     const img = await Canvas.loadImage(image)
-    const frost = await Canvas.loadImage('../assets/snowflake.png')
+    const frost = await Canvas.loadImage('../assets/images/snowflake.png')
     const encoder = new GIFEncoder(256, 310);
     encoder.start();
     encoder.setRepeat(0);

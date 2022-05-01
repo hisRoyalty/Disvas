@@ -3,7 +3,7 @@ const Canvas = require('canvas');
 
 module.exports = async(image) => {
     const img = await Canvas.loadImage(image)
-    const rain = await Canvas.loadImage('../assets/rain.png')
+    const rain = await Canvas.loadImage('../assets/images/rain.png')
     const encoder = new GIFEncoder(256, 310);
     encoder.start();
     encoder.setRepeat(0);
