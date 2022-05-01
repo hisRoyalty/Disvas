@@ -126,19 +126,13 @@ client.on("messageCreate", async (message) => {
 client.login(token)
 ```
 
-## Collaborators
+## Contributors
 
-### Im-Ace-1234
+#### Big thanks to these people, without them, this project wouldn't be possible!
+<a href = "https://github.com/hisRoyalty/Disvas/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=hisRoyalty/Disvas"/>
+</a>
 
-<img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/78647871">
-<br>
-I'm a cool guy.
-
-### hisRoyalty
-
-<img align="left" width="50" height="50" src="https://avatars.githubusercontent.com/u/88897968">
-<br>
-I love baguettes
 
 # Note
 > Work in progress!
