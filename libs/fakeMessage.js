@@ -2,7 +2,7 @@ const Canvas = require('canvas');
 
 module.exports = async(displayName, displayAvatar, roleColor, text) => {
     let textArray = [];
-    let getStretch = textAllign(text, textArray);
+    let getStretch = textAlign(text, textArray);
     text = textArray.map(t => `${t}`).join("\n");
     
     if(roleColor === '#000000') { 
@@ -27,7 +27,7 @@ module.exports = async(displayName, displayAvatar, roleColor, text) => {
     context.fillText(`${displayName}`, 120, 45);
     // Time
     let time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: "numeric", hour12: true });
-    let x = allignTime(displayName)
+    let x = alignTime(displayName)
     context.font = '15px whitneylight';
     context.fillStyle = '#a3a6aa';
     context.fillText(`Today at ${time}`, x, 45);
@@ -52,9 +52,9 @@ module.exports = async(displayName, displayAvatar, roleColor, text) => {
     }
 };
 
-// Alligns Text
-function textAllign(text, array) {
-let allign = text;
+// aligns Text
+function textAlign(text, array) {
+let align = text;
 let tries = text.length / 45;
 let split = text.split("\n");
 if(tries === 0) {
@@ -64,26 +64,26 @@ if(tries != Math.floor(tries)) {
     tries = Math.floor(tries) + 1;
 }
 for (let i = 0; i < tries; i++) {
-let tosub = 45;
-allign.split("").forEach(t => {
+let toSub = 45;
+align.split("").forEach(t => {
 if(t.toUpperCase() == t) {
-    tosub = tosub
+    toSub = toSub
 } else {
-    tosub = tosub + 0.1
+    toSub = toSub + 0.1
 }
 })
-let subsNum = Math.floor(tosub);
+let subsNum = Math.floor(toSub);
 console.log(subsNum)
-let push = allign.substring(0, subsNum);
-allign = allign.slice(subsNum);
+let push = align.substring(0, subsNum);
+align = align.slice(subsNum);
 array.push(push);
   }
   tries = tries + split.length
   return tries;
 }
 
-// Allign Time
-function allignTime(name) {
+// align Time
+function alignTime(name) {
 let x = 120;
 characters = name.split("")
 characters.forEach(c => {
