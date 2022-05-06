@@ -1,8 +1,8 @@
-const FakeMessage = require('../libs/fakeMessage');
-const Atomize = require('../libs/atomize')
-const TextOnAvatar = require('../libs/textOnAvatar')
-const Rain = require('../libs/rain')
-const Freeze = require('../libs/freeze');
+const FakeMessage = require('../libs/gif/fakeMessage');
+const Atomize = require('../libs/gif/atomize')
+const TextOnAvatar = require('../libs/gif/textOnAvatar')
+const Rain = require('../libs/gif/rain')
+const Freeze = require('../libs/gif/freeze');
 class Disvas {
     constructor() {
         throw Error(`[Disvas]: Instantiating of Disvas class failed! Please use static methods of Disvas instead!`)
