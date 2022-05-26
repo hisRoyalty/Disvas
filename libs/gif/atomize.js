@@ -11,7 +11,7 @@ module.exports = async(image) => {
     encoder.setQuality(2);
     const canvas = Canvas.createCanvas(256, 310);
     const ctx = canvas.getContext("2d");
-    var gradient = ctx.createLinearGradient(0, 0, 256, 310); //256=w, 310=h (test)
+    var gradient = ctx.createLinearGradient(0, 0, 256, 310);
     gradient.addColorStop(0.2, "pink");
     gradient.addColorStop(0.3, "red");
     gradient.addColorStop(0.4, "orange");
