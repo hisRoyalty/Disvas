@@ -1,4 +1,4 @@
-const FakeMessage = require('../libs/gif/fakeMessage');
+const FakeMessage = require('../libs/image/fakeMessage');
 const Atomize = require('../libs/gif/atomize')
 const TextOnAvatar = require('../libs/gif/textOnAvatar')
 const Rain = require('../libs/gif/rain')
