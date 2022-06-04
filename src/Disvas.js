@@ -3,6 +3,7 @@ const Atomize = require('../libs/gif/atomize')
 const TextOnAvatar = require('../libs/gif/textOnAvatar')
 const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
+const Droste = require('../libs/image/droste');
 class Disvas {
     constructor() {
         throw Error(`[Disvas]: Instantiating of Disvas class failed! Please use static methods of Disvas instead!`)
@@ -51,7 +52,7 @@ class Disvas {
     
     }
     /**
-     * 
+     * Puts text on a GIF, likewise a 'meme'.
      * @param {Buffer|string} image Image to use for the manipulation.
      * @param {string} args Text which is displayed on the returned GIF. It is separated by spaces.
      * @returns {Promise<Buffer>}
@@ -62,10 +63,24 @@ class Disvas {
         
     }
     /**
+     * Applies a droste effect on the image. 
+     * @see https://en.wikipedia.org/wiki/Droste_effect
+     * @param {Buffer|string} image Image to use for the manipulation.
+     * @returns {Promise<Buffer>}
+     */
+    static async droste(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Droste(image)
+    }
+
+    /**
      * Applies a rain effect to the image. Returns a GIF.
      * @param {Buffer|string} image Image to use for the manipulation.
      * @returns {Promise<Buffer>}
      */
+
     static async rain(image) {
         if(!image) {
             throw Error(
