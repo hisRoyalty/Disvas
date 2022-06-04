@@ -5,6 +5,7 @@ const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
 const Droste = require('../libs/image/droste');
 const Grayscale = require('../libs/image/grayscale');
+const Sepia = require('../libs/image/sepia');
 
 class Disvas {
     constructor() {
@@ -78,6 +79,19 @@ class Disvas {
             throw Error('[Disvas]: Image parameter is missing!')
         }
         return await Grayscale(image)
+    }
+    /**
+     * Applies a sepia effect on the image.
+     * @see https://en.wikipedia.org/wiki/Sepia_(color)
+     * @param {Buffer|string} image Image to use for the manipulation.
+     * @returns {Promise<Buffer>}
+     * {@link https://cms-assets.tutsplus.com/cdn-cgi/image/width=1250/uploads/users/108/posts/34119/final_image/sepia-effect-photoshop-final.jpg Reference}
+     */
+    static async sepia(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Sepia(image)
     }
 
     /**
