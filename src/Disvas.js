@@ -4,6 +4,8 @@ const TextOnAvatar = require('../libs/gif/textOnAvatar')
 const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
 const Droste = require('../libs/image/droste');
+const Grayscale = require('../libs/image/grayscale');
+
 class Disvas {
     constructor() {
         throw Error(`[Disvas]: Instantiating of Disvas class failed! Please use static methods of Disvas instead!`)
@@ -51,6 +53,33 @@ class Disvas {
         return await Atomize(image)
     
     }
+    /**
+     * Applies a grayscale effect on the image.
+     * @see https://en.wikipedia.org/wiki/Grayscale
+     * @param {Buffer|string} image Image to use for the manipulation.
+     * @returns {Promise<Buffer>}
+     * {@link https://en.wikipedia.org/wiki/Grayscale#/media/File:Grayscale_8bits_palette_sample_image.png Reference}
+     */
+    static async grayscale(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Grayscale(image)
+    }
+    /**
+     * Applies a greyscale effect on the image.
+     * @see https://en.wikipedia.org/wiki/Greyscale
+     * @param {Buffer|string} image Image to use for the manipulation.
+     * @returns {Promise<Buffer>}
+     * {@link https://en.wikipedia.org/wiki/Greyscale#/media/File:Grayscale_8bits_palette_sample_image.png Reference}
+     */
+     static async greyscale(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Grayscale(image)
+    }
+
     /**
      * Puts text on a GIF, likewise a 'meme'.
      * @param {Buffer|string} image Image to use for the manipulation.
