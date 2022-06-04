@@ -64,9 +64,11 @@ class Disvas {
     }
     /**
      * Applies a droste effect on the image. 
+     * [!] This method is not finished yet and is being worked on.
      * @see https://en.wikipedia.org/wiki/Droste_effect
      * @param {Buffer|string} image Image to use for the manipulation.
      * @returns {Promise<Buffer>}
+     * {@link https://en.wikipedia.org/wiki/Droste_effect#/media/File:Droste_1260359-nevit.jpg Reference}
      */
     static async droste(image) {
         if(!image) {
