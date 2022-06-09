@@ -4,8 +4,8 @@ const TextOnAvatar = require('../libs/gif/textOnAvatar')
 const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
 const Droste = require('../libs/image/droste');
-const Grayscale = require('../libs/image/grayscale');
-const Sepia = require('../libs/image/sepia');
+const Grayscale = require('../libs/base/grayscale');
+const Sepia = require('../libs/base/sepia');
 
 class Disvas {
     constructor() {
