@@ -8,7 +8,7 @@ module.exports = async (image) => {
 	const ctx = canvas.getContext('2d');
 	ctx.drawImage(img, 0, 0);
 	const id = ctx.getImageData(0, 0, img.width, img.height);
-	const data = id.data;
+	const { data } = id;
 	for (let i = 0; i < data.length; i += 4) {
 		data[i] = data[i] * 0.393 + data[i + 1] * 0.769 + data[i + 2] * 0.189;
 		data[i + 1] =
