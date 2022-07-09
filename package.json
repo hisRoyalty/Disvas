@@ -27,6 +27,6 @@
     "gifencoder": "^2.0.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23"
+    "@types/node": "^18.0.3"
   }
 }
