@@ -1,9 +1,7 @@
-const { rejects } = require("assert");
-const axios = require("axios");
 const fs = require("fs");
-const { request } = require("http");
 const fetch = require("node-fetch");
 const path = require("path");
+const process = require("process");
 
 async function isGif(buffer) {
   if (!buffer || buffer.length < 3) {
@@ -12,10 +10,6 @@ async function isGif(buffer) {
 
   return buffer[0] === 0x47 && buffer[1] === 0x49 && buffer[2] === 0x46;
 }
-
-
-
-
 
 const checkUrl = async (url) => {
   try {
@@ -28,8 +22,6 @@ const checkUrl = async (url) => {
   }
 };
 
-
-
 async function checkImageUrl(url) {
   if ((await checkUrl(url)) === true) {
     const res = await fetch(url);
@@ -40,64 +32,44 @@ async function checkImageUrl(url) {
   return false;
 }
 
-
-
-// * IMPORTANT: Buffer parameter of imageBufferChecker can either be a URL or a buffer
 async function imageBufferChecker(buffer) {
   if ((await checkImageUrl(buffer)) === true && typeof buffer === "string") {
     const buffImg = await fetch(buffer);
     return Buffer.from(await buffImg.arrayBuffer());
   }
-  const imageExt = new Set([
-	'png',
-	'jpg',
-	'jpeg',
-	'gif',
-	'avif',
-	'webp',
-	'gif',
-	'tiff',
-	'svg'
-  ])
-  function checkImagePath(pathk) {
-	if (typeof path !== 'string') {
-		return false;
-	}
-	if (imageExt.has(path.extname(pathk))) {
-		return true
-	}
 
+  const imageExt = new Set([
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "avif",
+    "webp",
+    "gif",
+    "tiff",
+    "svg",
+  ]);
+  function checkImagePath(args) {
+    if (typeof args !== "string") {
+      return false;
+    }
+    if (
+      fs.existsSync(args) === true &&
+      imageExt.has(path.extname(args).slice(1).toLowerCase())
+    ) {
+      return true;
+    }
+    return false;
   }
 
-
-  if ((await checkImageUrl()))
+  if (typeof buffer === "string" && checkImagePath(buffer) === true) {
+    const cwd = process.cwd();
+    return fs.readFileSync(path.resolve(cwd.toString(), buffer));
+  }
   if ((await checkImageUrl(buffer)) === false) {
     return buffer;
   }
 }
-const imageExt = new Set([
-	'png',
-	'jpg',
-	'jpeg',
-	'gif',
-	'avif',
-	'webp',
-	'gif',
-	'tiff',
-	'svg'
-  ])
-function checkImagePath(pathk) {
-	if (typeof pathk !== 'string') {
-		return false;
-	}
-	if (fs.existsSync(pathk) === true && imageExt.has(path.extname(pathk))) {
-		return true
-	}
-	return false
-
-  }
-  
-console.log(checkImagePath('tets.png'))
 
 module.exports = {
   isGif,
