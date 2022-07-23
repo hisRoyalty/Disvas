@@ -5,6 +5,6 @@ const base = require('./cardBase')
 
 class Welcomer extends base {
 	constructor() {
-		
+		super()
 	}
 }
