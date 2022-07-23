@@ -9,7 +9,7 @@ const Sepia = require('../libs/base/sepia');
 
 class Disvas {
     constructor() {
-        throw Error(`[Disvas]: Instantiating of Disvas class failed! Please use static methods of Disvas instead!`)
+        throw Error(`[Disvas]: Instantiating of ${this.constructor.name} class failed! Please use static methods of the class '${this.constructor.name}' instead!`)
     }
 
 
