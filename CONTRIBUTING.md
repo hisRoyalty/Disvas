@@ -1,6 +1,6 @@
 # Hello fellow contributors!
  
-#### Thank you for investing your time in this project! People like you shape the world into making it a great place :)
+#### Thank you for investing your time in this project!
 
 This is just a simple document to get your hands ready for contributing in this project!
 
@@ -17,7 +17,7 @@ ________________________________________________________________________________
 
 ### Formatting
 
-Simply use [Prettier](https://prettier.io/)
+Please use [Prettier](https://prettier.io/)!
 
 ### Pull Requests and Issues
 
