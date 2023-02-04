@@ -6,6 +6,9 @@ const Freeze = require('../libs/gif/freeze');
 const Droste = require('../libs/image/droste');
 const Grayscale = require('../libs/base/grayscale');
 const Sepia = require('../libs/base/sepia');
+const Multiply = require("../libs/gif/multiply");
+const Bomb = require("../libs/gif/bomb");
+
 
 class Disvas {
     constructor() {
@@ -52,6 +55,30 @@ class Disvas {
             throw Error('[Disvas]: Image parameter is missing!')
         }
         return await Atomize(image)
+    
+    }
+    /**
+     * Applies a bomb effect to the image. Returns a GIF.
+     * @param {Buffer|string} image Image to atomize.
+     * @returns {Promise<Buffer>}
+     */
+    static async bomb(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Bomb(image)
+    
+    }
+    /**
+     * Multiplies the image parameter multiple times to form a GIF. Returns a GIF.
+     * @param {Buffer|string} image Image to atomize.
+     * @returns {Promise<Buffer>}
+     */
+    static async multiply(image) {
+        if(!image) {
+            throw Error('[Disvas]: Image parameter is missing!')
+        }
+        return await Multiply(image)
     
     }
     /**
