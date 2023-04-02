@@ -19,7 +19,7 @@ module.exports = async (image) => {
 	  ],
   });
 
-  const img = await Gif.fromPath(path.resolve(__dirname, '../../assets/bomb.gif'));
+  const img = await Gif.fromPath(path.resolve(__dirname, '../../assets/gif/bomb.gif'));
   img.resize(400, 400);
 
   await gif.drawGif(img, 0, 0, {
