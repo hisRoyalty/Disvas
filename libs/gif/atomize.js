@@ -55,7 +55,7 @@ module.exports = async (image) => {
    * @INFO
    * function to calculate the brightness of a pixel
    * https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color
-   * Check this link if you have problems.
+   * Check this link if you have any doubts.
    */
   const Particle = (() => {
     function Particle() {

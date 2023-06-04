@@ -12,7 +12,7 @@ module.exports = async(image, args) => {
     const canvas = Canvas.createCanvas(150, 150);
     const context = canvas.getContext('2d');
     if (args.length < '2') throw Error ('[Disvas]: Provided text should be more than one word!')
-    let avatar = await Canvas.loadImage(image);
+    const avatar = await Canvas.loadImage(image);
     await args.forEach(async (content) => {
             context.drawImage(avatar, 0, 0, 150, 150);
             context.textAlign = 'center';
